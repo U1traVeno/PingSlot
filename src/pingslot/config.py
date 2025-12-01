@@ -22,7 +22,7 @@ class EnvVarFileConfigSettingsSource(InitSettingsSource):
     def __init__(
         self,
         settings_cls: type[BaseSettings],
-        env_var: str = "ROOMSLOT_CONFIG_FILE",
+        env_var: str = "PINGSLOT_CONFIG_FILE",
     ):
         """
         Args:
@@ -73,7 +73,7 @@ class ServerConfig(BaseModel):
 class DatabaseConfig(BaseModel):
     """数据库配置"""
 
-    url: str = "sqlite:///./roomslotbot.db"
+    url: str = "sqlite:///./pingslot.db"
     echo: bool = False
 
 
@@ -86,7 +86,7 @@ class Settings(BaseSettings):
         # 环境变量配置
         env_file=".env",
         env_file_encoding="utf-8",
-        env_prefix="ROOMSLOT_",
+        env_prefix="PINGSLOT_",
         env_nested_delimiter="__",
         # 大小写敏感
         case_sensitive=False,
@@ -95,7 +95,7 @@ class Settings(BaseSettings):
     )
 
     # 项目信息
-    project_name: str = "RoomSlotBot"
+    project_name: str = "PingSlot"
     version: str = "0.1.0"
 
     # 各模块配置
