@@ -66,7 +66,7 @@ class ServerConfig(BaseModel):
 
     host: str = "0.0.0.0"
     port: Annotated[int, Field(ge=1024, le=65535)] = 8105
-    api_prefix: str = "/api/v1"
+    api_prefix: str = "/api/"
     debug: bool = False
 
 
